@@ -1,0 +1,29 @@
+version: 2
+
+sources:
+  - name: northwind
+    description: This is a replica of the Postgres database used by our client
+    database: northwind
+    schema: public
+    tables: 
+    - name: orders
+      description: >
+        One record per order. Includes cancelled and deleted ordes.
+      columns:
+        - name: order_id
+          description: Primay key of the orders tables
+          tests: 
+            - unique
+            - not_null
+    - name: products
+      description: Esta tabela contem informacao sobre os produtos da Northwind
+    - name: shippers
+      description: Esta tabela contem informacao sobre os entregadores da Northwind
+    - name: employees
+      description: Esta tabela contem informacao sobre os funcionarios da Northwind
+    - name: customers
+      description: Esta tabela contem informacao sobre os clientes da Northwind
+    - name: suppliers     
+      description: Esta tabela contem informacao sobre os fornecedores da Northwind   
+    - name: order_details     
+      description: Esta tabela contem informacao sobre os detalhes do pedido da Northwind   

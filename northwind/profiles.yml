@@ -1,0 +1,12 @@
+# https://docs.getdbt.com/reference/profiles.yml
+northwind:
+  target: dev
+  outputs:
+    dev:
+      dbname: northwind
+      host: localhost
+      password: thewindisblowing
+      port: 5432
+      schema: dbt_dw
+      type: postgres
+      user: northwind_user
