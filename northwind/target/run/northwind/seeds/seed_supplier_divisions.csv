@@ -1,0 +1,14 @@
+
+    
+    
+    
+    create table "northwind"."dbt_dw"."seed_supplier_divisions" ("country" text,"division" text)
+  ;
+    -- dbt seed --
+    
+          insert into "northwind"."dbt_dw"."seed_supplier_divisions" ("country", "division") values
+          (%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s)
+      
+
+;
+  

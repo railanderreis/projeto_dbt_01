@@ -4,6 +4,10 @@ with suppliers as (
     select  *
     from {{ref('stg_suppliers')}}
 )
+, divisions as (
+    select * 
+    from {{ ref('seed_supplier_divisions')}}
+)
 , transformed as (
     select
         row_number() over (order by suppliers.supplier_id) as supplier_sk
@@ -19,7 +23,9 @@ with suppliers as (
         ,suppliers.phone
         ,suppliers.fax
         ,suppliers.homepage
-    from suppliers    
+        ,divisions.division
+    from suppliers
+    left join divisions on suppliers.country = divisions.country    
 )
 
 select *
